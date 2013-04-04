@@ -1,0 +1,95 @@
+100 G
+Ctrl-G
+*/? nN
+fF ;,
+% ()
+moving inside a line: ^ $ f wb e
+moving between lines: gg G 10G j k
+:! terminal command
+
+:%s/\cword/replacement/gc &u
+Default changes only first /g changes multiple
+:1,8s - replace between lines
+
+:w to write the selection to a file
+:r filename to write any text file to this one
+
+Ctrl + W Ctrl + W
+CTRL + D/TAB autocomplete
+:vs :sp
+
+> gg/G/10G
+>> indent line
+Calling a command in duplicate executes it on the current line
+
+qx{changes}q @x/u
+
+C = c$
+s = cl
+S = ^C Change whole line
+
+One key to move, one key to execute
+
+i{insert text}<Esc> constitutes a u change
+If you've paused long enough to ask the question:"Should I leave insert mode?" then do.
+
+daw :delete a word
+10C-a/C-x -increment/decrement a number by 10
+yyp - duplicate line
+2dw==d2w, but use dw. instead
+
+act, repeat, reverse
+
+ap,aw
+gU
+C-h/w/u delete back one char/to the start of the word/to start of line
+^ Always excludes current character, behaves like backspace
+C-o(mmand) 
+C-r in insert 0-9, =
+c-v insert character literal, dec, hex
+c-k digraph mode, fractions etc.
+gr/gR Virtual replace expands tabs to spaces
+
+v/V/C-v/o
+Use C-v -> A{typing} to append stuff to the end of all the lines
+gv repeats last selection
+vi(nside)w
+operators and motions work inside Visual mode, use c for expected behaviour
+c/v i/a w/t/p
+
+Ex Commands Strike far and wide
+:1,5p . $ % V /<html>/,/</html>/p -3
+:linefrom t lineto
+:t lineto
+:t. = yyp
+:t copy :m move :d
+Vjj m$ @:
+normal.
+lines normal i/a/c
+These commands don't overwrite buffers
+
+Open files using the Arglist/Buffers
+Open viewports on them using Windows
+Arrange these viewports in to Tabs
+
+Windows: Views over buffers
+C-w v/s c/o
+:vs :sp :on
+
+Argument List:
+clears the argument list and repopulates it
+:args*.* **/*.js **/*.css
+:args 'cat .chapters'
+:argdo/buffdo does a command on each buffer
+
+:edit! rereads the file from disk
+
+:lcd sets the working directory for the current window
+:cd sets the working directory for vim
+
+Prefer windows in tabs over buffers
+Tabs cold a collection of windows
+:tabe :tabc :tabo C-wT 1 gt gT :tabmove
+:edit %:h<tab> open file in same path as current file (not pwd)
+:set path+=app/** :find
+:wa

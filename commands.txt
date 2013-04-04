@@ -1,0 +1,65 @@
+echo $PATH | tr ":" \n"
+tr "abc" "123"
+tr will replace regex groups with single chars
+du -sh * | sort -rh | head -11
+sort | uniq -c 
+split -b 75m input.txt
+for i in *.JPG; do mv "$i" "${i/.JPG}.jpg; done
+find . -iname "*.png" -print0 | xargs -o du -ch | tail -1
+pgrep -l
+kill USR1 4125
+watch -n 10 kill -USR1 4125
+hexdump -C
+rename
+
+mplayer -lavdopts skipframe=nonref:skiploopfilter=all
+
+sudo update-alternatives --config x-www-browser
+
+tar -xzf
+ls
+-t : time
+-r : reverse
+-v : version
+-S : size
+-R : Recursive
+-X : extension
+
+to add scripts to 'nix
+add #!/bin/bash to the top of the file
+chmod +x script eXecutable permissions
+export PATH=$PATH:$HOME/bin
+
+jobs, top, ps 
+command &, ^z, fg, bg %jobnumber
+surf google.co.nz </dev/null &>/dev/null &
+nohup:output to file, disown:Will still use stdout
+
+vim - : reads from stdin
+vim -O $(find . -name '*.c')
+:!perl -c % //% refers to the current buffer
+:shell
+vimdiff
+You can call any text processing or VC commands from inside Vim
+You can integrate warnings with the jumplist
+
+find
+-ls : l
+-(i)name
+-(i)path
+-mtime +/-5(days)
+-newer filename.py
+-type d/f/l :directories,files or symlinks
+-exec : ran a command on the commandline
+-delete
+-print0 makes the record separator a null char, need to add -0 to xargs
+
+sort h r n f
+
+xargs
+multiline input | xargs command to add input as a command to
+
+grep:find files based on their contents
+-R
+
+file : gives metadata on a file

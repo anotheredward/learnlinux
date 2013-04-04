@@ -1,0 +1,13 @@
+C-b/f back/forward one character
+C-d delete current character
+C-- Undo
+C-a/e move to the start/end of the line
+Meta-f/b forward a word(Contains only alphanumeric characters)
+C-k kut to end of line
+Meta-backspace cut/d from curstor to start/end of the word
+C-y paste the last cut text
+Meta-y loop through cut text
+Meta-. loop through paste/prev commands
+C-r to search, C-r to loop through results
+C-j exit end search
+C-g cancel search
