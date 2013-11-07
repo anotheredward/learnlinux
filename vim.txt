@@ -68,12 +68,17 @@ normal.
 lines normal i/a/c
 These commands don't overwrite buffers
 
+Buffer: in-memory representation of a file, add only
+Args: list of files, can reload
+:ls lists buffers
+C-^ swaps buffers
+
 Open files using the Arglist/Buffers
-Open viewports on them using Windows
-Arrange these viewports in to Tabs
+Open Windows on them
+Arrange windows in to Tabs
 
 Windows: Views over buffers
-C-w v/s c/o
+C-w hjkl v/s c/o =
 :vs :sp :on
 
 Argument List:
@@ -88,8 +93,40 @@ clears the argument list and repopulates it
 :cd sets the working directory for vim
 
 Prefer windows in tabs over buffers
-Tabs cold a collection of windows
+Tabs hold a collection of windows and a working directory
+Each tab is essentially a project, composed of windows over buffers in a working directory.
 :tabe :tabc :tabo C-wT 1 gt gT :tabmove
 :edit %:h<tab> open file in same path as current file (not pwd)
 :set path+=app/** :find
 :wa
+
+Registers:
+xp ddp
+"_ black hole register
+""p is the same as p
+When y anking also be copied to the yank register: "0
+:reg
+"A appends to a
+"+ system clipboard
+"* middle mouse button
+"= expression register
+"%#:/. store what you'd expect
+Pasting over a visual selection swaps with "0
+<C-r>0 is more intuitive than p/P
+Pasting lines puts the cursor at the top of the pasted text
+gp/gP will place the cursor at the end of the pasted text
+
+Opening files
+:e %:h<tab> expands to the directory of the currently open buffer
+set path+=/**
+:find filename
+:!mkdir -p %:h When writing a file to directories that don't exist 
+:w !sudo tee % > /dev/null Write file as root
+
+Navigation:
+0 first char
+^ first non-blank char, I
+$ last char, including spaces
+g0, g^, g$ for virtual lines
+Vim has WORDS(list of any char separated by spaces) and words (letters, digits, underscores)
+ab123_	we're e.g.

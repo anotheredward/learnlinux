@@ -5,24 +5,31 @@ f ;,
 moving inside a line: ^ $ f wb e
 moving between lines: gg G 10G j k
 :%s/word/replacement/g/c\c &u
-:w :r
+:! :w :r
 >>, >gg/>G
 qx changes q @x/u
 S
 number Ctrl-x Ctrl-a 
 gU hl$^
-gr/gR
-C-v/o
-gv
+			gr/gR
+C-v o
+gv repeat last visual selection
 viw
 c/v/d i/a w/t/p, can delete whole word from anywhere using daw
 ^/$/f c/d
-C-h/w/u/
+In insert:
+C-h/w/u/ delete back char/word/line
 C-o
 C-r 0-9=
-Use C-v -> A{typing} to append stuff to the end of all the lines
+
+C-v, I/A
 
 Window management:
 C-w hkjlw^ sv co
 
 bf bl bp bn ls c-^ b 1/name bd5,10 1 2 3
+
+Things to play with:
+Vim regex
+Ex commands
+Open files using buffers, open viewports on them using windows, arrange these viewports using tabs
