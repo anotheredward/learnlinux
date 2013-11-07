@@ -1,0 +1,6 @@
+? Help
+c new terminal
+n/p C-a next/prev/back
+| S X Vertical split, split, close split
+C-i swap terminal 
+C-l clear 
