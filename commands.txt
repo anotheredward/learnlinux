@@ -1,3 +1,27 @@
+C-r search bash history
+
+Run - c-z,fg > Stopped - c-z,bg > Run background - c-c > End
+C-l clear, C-w delete word, A-f/b Move forward/backward a word, C-a/e Start end of the line
+!l -run last command starting with l in bash history
+mplayer !$ - run a command with the last argument of the last command
+?player single character, linux globbing
+grep -v -i -r -F
+chmod ugo+rwx
+user, group, owner are often the same on linux
+r:4 w:2 x:1, 777 is all permissions for all
+type ,find out if command exists,
+which ,to get path of non-shell command
+pgrep, pkill, pstree
+killall firefox
+echo `date`
+ps -aux
+dpkg -L packagename -Find out what the command is to run a new package
+apt-cache search
+apt-cache depends packagename
+aptitude is a more advanced version of apt, it installs recommended packages as well (better for me!)
+it also includes all the commands in one, and cleans up after itself
+Ubuntu aptitude survival guide
+
 echo $PATH | tr ":" \n"
 tr "abc" "123"
 tr will replace regex groups with single chars
@@ -12,7 +36,7 @@ watch -n 10 kill -USR1 4125
 hexdump -C
 rename
 
-mplayer -lavdopts skipframe=nonref:skiploopfilter=all
+mplayer -vo xv -ao sdl -lavdopts fast:skiploopfilter=all -framedrop 
 
 sudo update-alternatives --config x-www-browser
 
@@ -63,3 +87,15 @@ grep:find files based on their contents
 -R
 
 file : gives metadata on a file
+df
+file >> "text" add line to the end of a file
+
+fdisk -l to find out what you can mount
+Connected -> mounted -> unmounted -> ejected
+mount show currently mounted things
+umount unmount something
+fdisk /dev/sdb interactive dialog for creating patitions
+mkfs.SOMEFILESYSTEM /dev/sdb1 will format the partition with a certain file system
+A disk is split in to 0(no partition table)-n partitions, each of which has a file system
+
+amixer set Master 100%
